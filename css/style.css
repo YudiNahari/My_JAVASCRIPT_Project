@@ -1,0 +1,190 @@
+body {
+  box-sizing: border-box;
+  background-color: #13e4afda;
+}
+#userName {
+  width: 50%;
+  border-radius: 3px;
+}
+#userPas {
+  border-radius: 20px;
+  background-color: rgba(52, 153, 236, 0.274);
+  text-align: center;
+  width: 50%;
+  height: 240px;
+  padding-top: 30px;
+  margin-top: 200px;
+}
+
+#submit_user {
+  font-size: medium;
+  background-color: rgba(42, 22, 218, 0.466);
+  border-radius: 5px;
+  width: 50%;
+  height: 40px;
+  padding: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+
+#pin {
+  text-align: center;
+  background-color: #510af5a2;
+  width: 22%;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 8px;
+}
+
+#pin,
+#keys {
+  margin-bottom: 20px;
+}
+
+#keys,
+button {
+  height: 0px;
+  width: 0%;
+  background-color: #fcfcfca2;
+  font-family: 'Franklin Gothic Medium';
+  font-size: 30px;
+}
+#keys {
+  background-color: #510af5a2;
+  border-radius: 8px;
+  height: fit-content;
+  width: 21%;
+}
+
+#keys,
+.num {
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+  padding: 40px 50px 60px 40px;
+  border: 0;
+}
+div,
+#keys {
+  margin: auto;
+}
+.zero {
+  margin-left: 112px;
+}
+#header {
+  font-size: large;
+  color: white;
+  text-align: center;
+}
+
+#mainPage {
+  justify-content: space-evenly;
+  color: white;
+  display: flex;
+  margin: 80px 20px 19px 35px;
+}
+
+#addEmployee {
+  height: 500px;
+  background-color: #288676cc;
+  border-radius: 5px;
+  width: 20%;
+  text-align: center;
+}
+#employeeInfo {
+  height: 500px;
+  background-color: #288676cc;
+  border-radius: 5px;
+  width: 70%;
+  text-align: center;
+}
+
+#formAdd {
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+input,
+select {
+  border-radius: 0%;
+  background-color: rgb(246, 250, 250);
+  margin-bottom: 10px;
+  padding: 8px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#submit {
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgba(4, 247, 134, 0.979);
+  border: 0;
+  cursor: pointer;
+}
+
+#none {
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #d2cce2;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d8d9e07c;
+  border-radius: 1px;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  display: block;
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tab, tr, th {
+ padding: 0;
+}
+
+table, th {
+
+  position: sticky;
+  top: 0;
+}
+
+th {
+  color: black;
+  background-color: white;
+  border: 1px solid #a59696;
+}
+
+td {
+  color: white;
+  border: 1px solid #a59696;
+}
+
+tr:nth-child(even) {
+  background-color: #3857e09c;
+}
+
+img {
+  background-color: white;
+  cursor: pointer;
+  width: 30%;
+}
