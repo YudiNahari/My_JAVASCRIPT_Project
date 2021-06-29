@@ -1,9 +1,9 @@
 function inputUser() {
   var main = document.getElementById("main");
-  main.innerHTML = `<div id="userPas"><h2 id="login">How Are You Today? :)</h2>
+  main.innerHTML = `<div id="userPas"><h2 id="login">Enter Username</h2>
  <form id="formUserPass">
-     <input type="text" id="userName" placeholder="Please Enter Your User Name" required />
-     <button type="submit" id="submit_user">Get Me in</button>
+     <input type="text" id="userName" placeholder="My User Name" required />
+     <br><button type="submit" id="submit_user">Login</button>
  </form></div>`;
 }
 
@@ -35,7 +35,7 @@ function employee_info(data) {
       <td class="tde" id="pass">${e.password}</td>
       <td class="tde" id="role">${e.role}</td>
       <td>
-      <img class="editbtn tde" src="./assests/icons8-edit-24.png" alt="trash" />
+      <img id="gg" class="editbtn tde" src="./assests/icons8-edit-24.png" alt="trash" />
       <img class="trash" src="./assests/icons8-trash-64.png" alt="edit" />
       </td>
       </tr>`;
@@ -49,16 +49,16 @@ function show_table(rows) {
   <source src="../audio/btn.mp3" type="audio/mp3">
   </audio>
 <div id="header">
-    <h2>Home | About | Login</h2>
+    <h2><a href="#"> Home </a> | <a href="#"> About </a> | <a href="#userPas"> Login </a></h2>
   </div>
   <div id="mainPage">
   <div id="addEmployee">
-  <h2>Add an Employee</h2>
+  <h2 class="ani">Add an Employee</h2>
 <form id="formAdd">
- <input type="text" id="fName" placeholder="Enter The First Name"  required />
- <input type="text" id="lName" placeholder="Enter The Last Name"  required />
- <input type="text" id="user" placeholder="Enter The User Name"  required />
- <input type="text" id="pass" placeholder="Enter The Password"  required />
+ <input type="text" id="fName" placeholder="First Name"  required />
+ <input type="text" id="lName" placeholder="Last Name"  required />
+ <input type="text" id="user" placeholder="User Name"  required />
+ <input type="text" id="pass" placeholder="Password"  required />
    <select id="classification" name="Classification">
      <option value="">Classification</option>
      <option value="Manager">Manager</option>
@@ -68,9 +68,9 @@ function show_table(rows) {
  </form>
   </div>
   <div id="employeeInfo">
+    <table id="tab">
     <h2>Current Employees</h2>
-    <table class="tab">
-    <tbody>
+    <thead>
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -79,6 +79,8 @@ function show_table(rows) {
         <th>Role</th>
         <th>Action</th>
       </tr>
+      </thead>
+      <tbody class="">
       ${rows}
       </tbody>
     </table>
@@ -90,4 +92,11 @@ function alert_massage(massage) {
   alert(massage);
 }
 
-export { inputUser, employee_info, alert_massage, password_key };
+function colorOn(e) {
+  $("#" + e).css("background-color", "#0ca80ce8");
+}
+function colorOff() {
+  $(".num").css({ "background-color": "" });
+}
+
+export { inputUser, employee_info, alert_massage, password_key, colorOn, colorOff };

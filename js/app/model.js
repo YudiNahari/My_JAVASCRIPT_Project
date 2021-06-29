@@ -77,11 +77,12 @@ function manager_func(row_click, id, id_clicked) {
 
 function edit_table_true(row_box) {
   if (!row_box[1].isContentEditable) {
-    loop_row("true", "thin solid white", row_box);
-    $(row_box[6]).css("background-color", "green");
+    loop_row("true", "solid #1392e7", row_box,  "important");
+    console.log(row_box[6].firstchild);
+    $(row_box[6]).find('img:first').css("background-color", "green", "important");
   } else {
     loop_row("false", "", row_box);
-    $(row_box[6]).css("background-color", "");
+    $(row_box[6]).find('img:first').css("background-color", "");
     var editRow = row_box;
     update_db(editRow);
   }

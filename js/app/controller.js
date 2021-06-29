@@ -138,7 +138,7 @@ function color_on(e) {
   if (userPass.pass.length >= 4) {
     go_chack_info(userPass);
   }
-  $("#" + e).css("background-color", "yellow");
+  View.colorOn(e);
   clearTimeout(timer);
   color_off();
 }
@@ -150,7 +150,7 @@ function color_off() {
       chackFaild();
     }
     userPass.pass = "";
-    $(".num").css({ "background-color": "" });
+    View.colorOff();
   }, 3000);
 }
 
