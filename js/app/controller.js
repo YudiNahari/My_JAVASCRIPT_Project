@@ -79,9 +79,10 @@ function addEmployee(role, id) {
   add_emp_permission(new_emp, role, id);
 }
 
-async function add_emp_permission(new_emp, role, id) {
+function add_emp_permission(new_emp, role, id) {
   if ((new_emp.role == "Employee" && role == "Manager") || role == "Admin") {
     Model.addDb(new_emp);
+    View.new_employee(new_emp);
     info_exist(role, id);
   }
 }

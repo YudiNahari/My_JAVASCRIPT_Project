@@ -56,9 +56,7 @@ function delete_db(id) {
     },
     method: "POST",
   };
-  $.ajax(settings).done(function (response) {
-    console.log(response); // TODO: Do something with the result
-  });
+  $.ajax(settings).done();
 }
 
 function employee_func(id, row_box) {
@@ -78,7 +76,6 @@ function manager_func(row_click, id, id_clicked) {
 function edit_table_true(row_box) {
   if (!row_box[1].isContentEditable) {
     loop_row("true", "solid #1392e7", row_box,  "important");
-    console.log(row_box[6].firstchild);
     $(row_box[6]).find('img:first').css("background-color", "green", "important");
   } else {
     loop_row("false", "", row_box);

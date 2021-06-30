@@ -25,6 +25,7 @@ function password_key() {
 }
 
 function employee_info(data) {
+  console.log(data);
   var rows = "";
   data.forEach((e) => {
     rows += `<tr>
@@ -35,7 +36,7 @@ function employee_info(data) {
       <td class="tde" id="pass">${e.password}</td>
       <td class="tde" id="role">${e.role}</td>
       <td>
-      <img id="gg" class="editbtn tde" src="./assests/icons8-edit-24.png" alt="trash" />
+      <img class="editbtn tde" src="./assests/icons8-edit-24.png" alt="trash" />
       <img class="trash" src="./assests/icons8-trash-64.png" alt="edit" />
       </td>
       </tr>`;
@@ -49,7 +50,7 @@ function show_table(rows) {
   <source src="../audio/btn.mp3" type="audio/mp3">
   </audio>
 <div id="header">
-    <h2><a href="#"> Home </a> | <a href="#"> About </a> | <a href="#userPas"> Login </a></h2>
+    <h2><a href="#main"> Home </a> | <a href="#"> About </a> | <a href="#"> Login </a></h2>
   </div>
   <div id="mainPage">
   <div id="addEmployee">
@@ -59,7 +60,7 @@ function show_table(rows) {
  <input type="text" id="lName" placeholder="Last Name"  required />
  <input type="text" id="user" placeholder="User Name"  required />
  <input type="text" id="pass" placeholder="Password"  required />
-   <select id="classification" name="Classification">
+   <select id="classification" name="Classification" required>
      <option value="">Classification</option>
      <option value="Manager">Manager</option>
      <option value="Employee">Employee</option>
@@ -99,4 +100,11 @@ function colorOff() {
   $(".num").css({ "background-color": "" });
 }
 
-export { inputUser, employee_info, alert_massage, password_key, colorOn, colorOff };
+export {
+  inputUser,
+  employee_info,
+  alert_massage,
+  password_key,
+  colorOn,
+  colorOff,
+};

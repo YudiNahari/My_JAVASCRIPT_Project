@@ -97,6 +97,12 @@ div,
   margin: 80px 20px 19px 35px;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+
+}
+
 #addEmployee {
   background: linear-gradient(#121214, #5a93c2);
   height: 500px;
@@ -125,9 +131,9 @@ select {
   font-size: medium;
   border-radius: 5px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
-  padding: 9px 0;
+  padding: 8px 0;
   width: 80%;
   text-align: center;
 }
