@@ -24,8 +24,7 @@ function password_key() {
 </div>`;
 }
 
-function employee_info(data) {
-  console.log(data);
+async function employee_info(data) {
   var rows = "";
   data.forEach((e) => {
     rows += `<tr>

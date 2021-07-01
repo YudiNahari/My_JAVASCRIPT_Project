@@ -19,13 +19,21 @@ async function chack_if_user_exist(info) {
 }
 
 async function get_all_employee() {
-  let res = await fetch(
-    `https://webschool-f01fe0.appdrag.site/api/getAllEmployee`
-  );
-  if (res.ok) {
-    let json = await res.json();
-    return json.Table;
-  }
+  var result = null;
+  var settings = {
+    url: "https://webschool-f01fe0.appdrag.site/api/getAllEmployee",
+    data: {
+      AD_PageNbr: "1",
+      AD_PageSize: "500",
+    },
+    method: "POST",
+  };
+  await $.ajax(settings).done(function (res) {
+    if (res.Table[0]) {
+       result = res.Table;
+    }
+  });
+  return result;
 }
 
 function admin_trash_func(row_click, id_clicked) {
@@ -75,11 +83,13 @@ function manager_func(row_click, id, id_clicked) {
 
 function edit_table_true(row_box) {
   if (!row_box[1].isContentEditable) {
-    loop_row("true", "solid #1392e7", row_box,  "important");
-    $(row_box[6]).find('img:first').css("background-color", "green", "important");
+    loop_row("true", "solid #1392e7", row_box, "important");
+    $(row_box[6])
+      .find("img:first")
+      .css("background-color", "green", "important");
   } else {
     loop_row("false", "", row_box);
-    $(row_box[6]).find('img:first').css("background-color", "");
+    $(row_box[6]).find("img:first").css("background-color", "");
     var editRow = row_box;
     update_db(editRow);
   }
@@ -107,7 +117,7 @@ function update_db(tr) {
   $.ajax(settings).done();
 }
 
-function addDb(emp) {
+async function addDb(emp) {
   var settings = {
     url: "https://webschool-f01fe0.appdrag.site/api/addEmployee",
     data: {
@@ -119,7 +129,7 @@ function addDb(emp) {
     },
     method: "POST",
   };
-  $.ajax(settings).done();
+  await $.ajax(settings).done();
 }
 
 export {

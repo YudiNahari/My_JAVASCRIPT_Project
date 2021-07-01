@@ -55,7 +55,7 @@ async function go_chack_info(info) {
 
 async function info_exist(role, id) {
   var db_emp_table = await Model.get_all_employee();
-  View.employee_info(db_emp_table);
+  await View.employee_info(db_emp_table);
   submit_new_emp(role, id);
   edit_func(role, id);
   trash_func(role, id);
@@ -79,11 +79,17 @@ function addEmployee(role, id) {
   add_emp_permission(new_emp, role, id);
 }
 
-function add_emp_permission(new_emp, role, id) {
+async function add_emp_permission(new_emp, role, id) {
   if ((new_emp.role == "Employee" && role == "Manager") || role == "Admin") {
-    Model.addDb(new_emp);
-    View.new_employee(new_emp);
-    info_exist(role, id);
+    await Model.addDb(new_emp);
+    console.log("1");
+    var db_emp = await Model.get_all_employee();
+    console.log("2" + db_emp);
+    await View.employee_info(db_emp);
+    console.log("3");
+    submit_new_emp(role, id);
+    edit_func(role, id);
+    trash_func(role, id);
   }
 }
 
